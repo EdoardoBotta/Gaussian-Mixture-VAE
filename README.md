@@ -18,5 +18,5 @@ We use to Variational Inference to estimate the parameters $(p_1, p_2, \dots, p_
 ```
 where $p_{\theta}$ and $q_{\phi}$ are parametrized by neural networks.
 
-## Tackling non-differentiability: Gumbel approximation
+## Gumbel approximation
 One of the main challenges in using discrete latents in VAEs is the inherent non-differentiability of the resulting PMF. We solve this issue by approximating the one-hot encoded vectors $z_t$ by a Gumbel distribution, whose temperature is decreased over time during training. 
