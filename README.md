@@ -12,7 +12,7 @@ x_t | x_{t-1} \sim Normal \left( \Pi_{z_t}x_{t-1}, \Sigma \right)
 Intuitively, at time $t$ the series evolves as a linear autoregressive model according to one of $K$ choices of parameter matrix $(\Pi)_k$. 
 
 ## Variational inference
-We leverage Variational Inference to estimate the parameters $(p_1, p_2, \dots, p_K), (\Pi_1, \Pi_2, \dots, Pi_k), \Sigma$ of the above model. 
+We leverage Variational Inference to estimate the parameters $(p_1, p_2, \dots, p_K), (\Pi_1, \Pi_2, \dots, \Pi_k), \Sigma$ of the above model. 
 
 Specifically, this is achieved by maximizing the variational lower bound (ELBO) on the log-likelihood of the observed data. 
 
@@ -23,9 +23,9 @@ The resulting optimization problem takes the form
 where $p_{\theta}$ is as described in the generative model and $q_{\phi}$ is a variational distribution parametrized by a feed-forward neural network.
 
 ## Gumbel approximation
-One of the main challenges in using discrete latents in VAEs is the inherent non-differentiability of the resulting PMF of the variational distribution q_{\phi}. This makes it unfeasible to optimize the objective via gradient-based methods. 
+The main challenges in using discrete latents in VAEs is the inherent non-differentiability of the resulting PMF of the variational distribution $q_{\phi}$. This makes it unfeasible to optimize the objective via gradient-based methods. 
 
-We solve this issue by approximating the one-hot encoded vectors $z_t$ by a vector drawn from a Gumbel distribution. The temperature of the Gumbel distribution is initialized at an arbitrary value and slowly annalead to 0, making the approximation progressively more accurate. 
+We solve this issue by approximating the one-hot encoded vectors $z_t$ by a vector drawn from a Gumbel distribution. The temperature of the Gumbel distribution is initialized at an arbitrary value and slowly annealed to 0, making the approximation progressively more accurate. 
 
 ## References
 * [Tutorial: Categorical Variational Autoencoders using Gumbel-Softmax](https://blog.evjang.com/2016/11/tutorial-categorical-variational.html) by Eric Jang
