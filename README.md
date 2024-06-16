@@ -1,5 +1,5 @@
 # Gaussian-Mixture-VAE
-Implementation of a Variational Autoencoder with Categorical latent variables.
+Implementation of a Variational Autoencoder with Categorical Latent variables.
 
 ## Model
 We consider a time series $(x)_t$ whose transitions are described by a mixture of $K$ Gaussians, 
