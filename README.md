@@ -25,7 +25,7 @@ where $p_{\theta}$ is as described in the generative model and $q_{\phi}$ is a v
 ## Gumbel approximation
 One of the main challenges in using discrete latents in VAEs is the inherent non-differentiability of the resulting PMF of the variational distribution q_{\phi}. This makes it unfeasible to optimize the objective via gradient-based methods. 
 
-We solve this issue by approximating the one-hot encoded vectors $z_t$ by a vector drawn from a Gumbel distribution. As training proceeds, the temperature of the Gumbel distribution is slowly annalead to 0 and the approximation becomes progressively more accurate. 
+We solve this issue by approximating the one-hot encoded vectors $z_t$ by a vector drawn from a Gumbel distribution. The temperature of the Gumbel distribution is initialized at an arbitrary value and slowly annalead to 0, making the approximation progressively more accurate. 
 
 ## References
 * [Tutorial: Categorical Variational Autoencoders using Gumbel-Softmax](https://blog.evjang.com/2016/11/tutorial-categorical-variational.html) by Eric Jang
