@@ -1,8 +1,8 @@
 # Gaussian-Mixture-VAE
-Implementation of a Variational Autoencoder with Categorical Latent variables.
+This repository contains a minimal PyTorch implementation of a Variational Autoencoder with Categorical Latent variables.
 
 ## Model
-We consider a time series $(x)_t$ whose transitions are described by an auto-regressive mixture of $K$ Gaussians. The generative process can be described hierarchically as follows
+We consider data distributed as a time series $(x)_t$ whose transitions are described by an auto-regressive mixture of $K$ Gaussians. The generative process can be described hierarchically as follows
 ```math 
 z_t \sim Categorical(p_1, p_2, \dots, p_K)
 ```
