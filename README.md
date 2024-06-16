@@ -9,7 +9,7 @@ z_t \sim Categorical(p_1, p_2, \dots, p_K)
 ```math 
 x_t | x_{t-1} \sim Normal \left( \Pi_{z_t}x_{t-1}, \Sigma \right)
 ```
-Intuitively, at time $t$ the series evolves as a linear autoregressively according to one of $K$ choices of parameter matrices $(Pi)_k$. 
+Intuitively, at time $t$ the series evolves as a linear autoregressive model according to one of $K$ choices of parameter matrix $(\Pi)_k$. 
 
 ## Variational inference
 We leverage Variational Inference to estimate the parameters $(p_1, p_2, \dots, p_K), (\Pi_1, \Pi_2, \dots, Pi_k), \Sigma$ of the above model. 
