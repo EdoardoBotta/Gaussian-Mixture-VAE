@@ -23,7 +23,9 @@ The resulting optimization problem takes the form
 where $p_{\theta}$ is as described in the generative model and $q_{\phi}$ is a variational distribution parametrized by a feed-forward neural network.
 
 ## Gumbel approximation
-One of the main challenges in using discrete latents in VAEs is the inherent non-differentiability of the resulting PMF that appear in the objective. We solve this issue by approximating the one-hot encoded vectors $z_t$ by a Gumbel distribution. As training proceeds, the temperature of the Gumbel distributino is slowly annalead to 0 and the approximation becomes progressively more accurate. 
+One of the main challenges in using discrete latents in VAEs is the inherent non-differentiability of the resulting PMF of the variational distribution q_{\phi}. This makes it unfeasible to optimize the objective via gradient-based methods. 
+
+We solve this issue by approximating the one-hot encoded vectors $z_t$ by a vector drawn from a Gumbel distribution. As training proceeds, the temperature of the Gumbel distribution is slowly annalead to 0 and the approximation becomes progressively more accurate. 
 
 ## References
 * [Tutorial: Categorical Variational Autoencoders using Gumbel-Softmax](https://blog.evjang.com/2016/11/tutorial-categorical-variational.html) by Eric Jang
